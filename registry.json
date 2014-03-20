@@ -1,1 +1,1 @@
-{"devices":[{"type":"photosensor","name":"xbee-photosensor (6dd5)","data":{"remote16":"6dd5","remote64":"0013a200408b8189"}}]}
+{"devices":[{"type":"lcddisplay","name":"lcd-192.168.1.22","data":{"addr":"192.168.1.22","valA":0,"valB":0,"requesting":false}},{"type":"photosensor","name":"xbee-photosensor-392e","data":{"remote16":"392e","remote64":"0013a20040b09f92"}},{"type":"photosensor","name":"xbee-photosensor-6dd5","data":{"remote16":"6dd5","remote64":"0013a200408b8189"}}]}
