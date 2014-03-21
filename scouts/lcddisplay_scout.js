@@ -1,5 +1,5 @@
 var EventEmitter = require('events').EventEmitter;
-var mdns = require('mdns');
+var mdns = require('mdns2');
 var util = require('util');
 
 var LCDDriver = require('../drivers/lcd_arduino.js');

@@ -10,7 +10,7 @@ var ZigbeeScout = module.exports = function() {
   
   this.drivers = [];
 
-  this.portname = '/dev/tty.usbserial-A601EM9Z';
+  this.portname = '/dev/tty.usbserial-A601EM9S';
   this.port = null;
   this.xbeeAPI = new xbee_api.XBeeAPI({
     api_mode: 1
