@@ -23,12 +23,6 @@ HelloApp.prototype.init = function(elroy) {
 
 	count++;
       });
-
   });
-
-  elroy.observe('type="photosensor"').subscribe(function(photosensor){
-    elroy.expose(photosensor);
-  });
-
 
 };
