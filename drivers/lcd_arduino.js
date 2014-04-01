@@ -1,4 +1,5 @@
 var request = require('request');
+var YunProgrammer = require('yun-programmer');
 
 var LCDDriver = module.exports = function(addr) {
   this.type = 'lcddisplay';
@@ -16,10 +17,24 @@ var LCDDriver = module.exports = function(addr) {
 
 LCDDriver.prototype.init = function(config) {
   config
-    .when('on', { allow: ['updateValA','updateValB'] })
+    .when('on', { allow: ['updateValA','updateValB','updateFirmware',] })
     .map('updateValA', this.updateValA,[{type : 'number',name : 'val'}])
-    .map('updateValB', this.updateValB,[{type : 'number',name : 'val'}]);
+    .map('updateValB', this.updateValB,[{type : 'number',name : 'val'}])
+    .map('updateFirmware',this.updateFirmware,[{type : 'file',name : 'hexFile'}])
 };
+
+LCDDriver.prototype.updateFirmware = function(hexFile,cb){
+  var p = new YunProgrammer({
+    host : this.data.addr,
+    file : hexFile.path,
+    password : 'silkylotus997'
+  });
+
+  p.flash(function(err,output){
+    cb(err,output);
+  });
+};
+
 
 LCDDriver.prototype.updateValA = function(val,cb){
   var self = this;
@@ -30,7 +45,6 @@ LCDDriver.prototype.updateValA = function(val,cb){
     return cb();
 
   this._requesting = true;
-  console.log('requesting ',this.data.valA,this.data.valB);
   request('http://'+this.data.addr+'/arduino/update/'+this.data.valA+'/'+this.data.valB,function(err){
     self._requesting = false;
     return cb(err);
