@@ -4,18 +4,18 @@
 #include <LiquidCrystal.h>
 
 YunServer server;
-LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+LiquidCrystal lcd(7, 6, 5, 4, 3, 2);
 
 void setup() {
   // set up the LCD's number of columns and rows:
   lcd.begin(16, 2);
-  
-  lcd.print("Wifi Booting...");
-  
+
+  lcd.print("Fuck No Tricks!!");
+
   Bridge.begin();
   server.listenOnLocalhost();
   server.begin();
-  
+
   lcd.clear();
   lcd.setCursor(0, 0);
   lcd.print("Waiting for data");
@@ -58,7 +58,7 @@ void updatelcd(YunClient client) {
   client.print(valA);
   client.print(F(" "));
   client.println(valB);
-  
+
   lcd.clear();
   lcd.setCursor(0, 0);
   lcd.print(F("Val 1: "));
@@ -68,3 +68,4 @@ void updatelcd(YunClient client) {
   lcd.print(F("Val 2: "));
   lcd.print(valB);
 }
+

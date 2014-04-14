@@ -16,12 +16,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/elroy-io/zigbee-demo-app.git"
+    "url": "git://github.com/zettajs/zigbee-demo-app.git"
   },
   "author": "",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/elroy-io/zigbee-demo-app/issues"
+    "url": "https://github.com/zettajs/zigbee-demo-app/issues"
   },
-  "homepage": "https://github.com/elroy-io/zigbee-demo-app"
+  "homepage": "https://github.com/zettajs/zigbee-demo-app"
 }
